@@ -17,6 +17,7 @@
     <nav class="paths">
       <a href="#about">~/about</a>
       <a href="#skills">~/skills</a>
+      <a href="#gallery">~/gallery</a>
       <a href="#projects">~/projects</a>
       <a href="#contact">~/contact</a>
     </nav>
@@ -109,6 +110,43 @@
       </div>
     </div>
   </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <h2 class="section-title">Gallery <span class="path">~/gallery</span></h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="photos/photo1.jpg" alt="Imran — photo 1" loading="lazy" onerror="this.closest('.gallery-item').classList.add('img-missing')">
+          <figcaption>photo1.jpg</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="photos/photo2.jpg" alt="Imran — photo 2" loading="lazy" onerror="this.closest('.gallery-item').classList.add('img-missing')">
+          <figcaption>photo2.jpg</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="photos/photo3.jpg" alt="Imran — photo 3" loading="lazy" onerror="this.closest('.gallery-item').classList.add('img-missing')">
+          <figcaption>photo3.jpg</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="photos/photo4.jpg" alt="Imran — photo 4" loading="lazy" onerror="this.closest('.gallery-item').classList.add('img-missing')">
+          <figcaption>photo4.jpg</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="photos/photo5.jpg" alt="Imran — photo 5" loading="lazy" onerror="this.closest('.gallery-item').classList.add('img-missing')">
+          <figcaption>photo5.jpg</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="photos/photo6.jpg" alt="Imran — photo 6" loading="lazy" onerror="this.closest('.gallery-item').classList.add('img-missing')">
+          <figcaption>photo6.jpg</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo" hidden>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close enlarged photo">✕</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
 
   <section id="projects">
     <div class="wrap">

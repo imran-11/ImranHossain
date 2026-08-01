@@ -45,4 +45,40 @@
     typeLines();
   }
 
+  // ---- gallery lightbox ----
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  function openLightbox(src, alt){
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightbox.hidden = false;
+    lightboxClose.focus();
+  }
+  function closeLightbox(){
+    lightbox.hidden = true;
+    lightboxImg.src = '';
+  }
+
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.setAttribute('tabindex', '0');
+    item.addEventListener('click', () => {
+      if(item.classList.contains('img-missing')) return;
+      const img = item.querySelector('img');
+      openLightbox(img.src, img.alt);
+    });
+    item.addEventListener('keydown', e => {
+      if((e.key === 'Enter' || e.key === ' ') && !item.classList.contains('img-missing')){
+        e.preventDefault();
+        const img = item.querySelector('img');
+        openLightbox(img.src, img.alt);
+      }
+    });
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && !lightbox.hidden) closeLightbox(); });
+
   console.log('Portfolio loaded');
